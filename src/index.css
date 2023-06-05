@@ -1,0 +1,9 @@
+/* box-sizing */
+* {
+    box-sizing: border-box;    
+}
+
+/* 字體 */
+body {
+    font-family: 'Noto Sans TC', sans-serif,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
