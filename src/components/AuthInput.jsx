@@ -4,13 +4,11 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  background-color: var(--dark-30);
   width: 100%;
   height: 54px;
   border-radius: 2px;
-  border-bottom: 2px solid var(--default);
-  margin-bottom: 32px;
 `
+
 const StyledLabel = styled.label`
   font-size: 14px;
   color: var(--dark-80);
@@ -20,18 +18,32 @@ const StyledLabel = styled.label`
 const StyledInput = styled.input`
   outline: none;
   border: none;
+  border-bottom: 2px solid var(--default);
+  height: 100%;
   background-color: var(--dark-30);
+  &[disabled] {
+    color: var(--dark-80);
+    border-bottom: 2px solid var(--dark-50);
+  }
+  &:hover {
+     border-bottom: 2px solid var(--blueColor);
+  }
+  &:focus {
+     border-bottom: 2px solid var(--blueColor);
+  }
   &::placeholder {
     color: var(--dark-60);
     font-size: 16px;
   }
 `
 
-const AuthInput = () => {
+const AuthInput = ({ type }) => {
   return (
     <StyledContainer>
       <StyledLabel>123</StyledLabel>
-      <StyledInput placeholder={'123'} />
+      <StyledInput 
+      text={type || "text"}
+      placeholder={'123'} />
     </StyledContainer>
   )
 }
