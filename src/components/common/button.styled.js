@@ -1,10 +1,10 @@
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 
 const StyledAuthButton = styled.button`
   border-radius: 50px;
-  background-color: #ff6600;
+  background-color: var(--main);
   border: none;
-  color: white;
+  color: var(--dark-0);
   width: 356px;
   height: 46px;
   font-family: 'Noto Sans TC', sans-serif;
@@ -17,7 +17,7 @@ const StyledAuthButton = styled.button`
   &:hover {
     cursor: pointer;
   }
-`;
+`
 
 const StyledNavbarButton = styled(StyledAuthButton)`
   width: 178px;
@@ -35,9 +35,9 @@ const StyledFollowButton = styled(StyledAuthButton)`
   ${({ isUnfollow }) =>
     isUnfollow &&
     css`
-      background-color: #ffffff;
-      color: #ff6600;
-      border: 1px solid #ff6600;
+      background-color: var(--dark-0);
+      color: var(--main);
+      border: 1px solid var(--main);
       width: 64px;
       height: 40px;
     `}
@@ -55,4 +55,4 @@ export {
   StyledSaveButton as SaveButton,
   StyledFollowButton as FollowButton,
   StyledInputButton as InputButton,
-};
+}

@@ -1,18 +1,18 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 import {
   LogoIcon,
   HomeIcon,
   UserIcon,
   SettingIcon,
   LogoutIcon,
-} from '../assets/icons';
-import { NavbarButton } from "./common/button.styled"
+} from '../assets/icons'
+import { NavbarButton } from './common/button.styled'
 
 const StyledNavbar = styled.nav`
   width: 100%;
   height: 100vh;
   position: relative;
-`;
+`
 
 const StyledNavList = styled.ul`
   list-style: none;
@@ -20,10 +20,10 @@ const StyledNavList = styled.ul`
   margin: 0;
   display: flex;
   flex-direction: column;
-`;
+`
 
 const StyledNavItem = styled.li`
-  color: #44444f;
+  color: var(--dark-90);
   font-size: 18px;
   font-weight: 700;
   display: flex;
@@ -35,7 +35,7 @@ const StyledNavItem = styled.li`
     position: absolute;
     bottom: 0;
   }
-`;
+`
 
 const StyledLogo = styled.div`
   padding: 10px 16px;
@@ -45,49 +45,45 @@ const StyledLogo = styled.div`
 
 const StyledText = styled.p`
   margin-left: 2px;
-`;
+`
 
 const Navbar = () => {
   return (
     <StyledNavbar>
       <StyledLogo>
-        <LogoIcon/>
+        <LogoIcon />
       </StyledLogo>
       <StyledNavList>
         <StyledNavItem>
           <StyledLogo>
-            <HomeIcon/>
+            <HomeIcon />
           </StyledLogo>
           <StyledText>首頁</StyledText>
-          </StyledNavItem>
+        </StyledNavItem>
         <StyledNavItem>
           <StyledLogo>
             <UserIcon />
-            </StyledLogo>
+          </StyledLogo>
           <StyledText>個人資料</StyledText>
-          </StyledNavItem>
+        </StyledNavItem>
         <StyledNavItem>
           <StyledLogo>
             <SettingIcon />
-            </StyledLogo>
-            <StyledText>設定</StyledText>
-          </StyledNavItem>
-          <StyledNavItem>
-          <NavbarButton>
-            推文
-          </NavbarButton>
-          </StyledNavItem>
-      <StyledNavItem>
-        <StyledLogo>
-          <LogoutIcon />
+          </StyledLogo>
+          <StyledText>設定</StyledText>
+        </StyledNavItem>
+        <StyledNavItem>
+          <NavbarButton>推文</NavbarButton>
+        </StyledNavItem>
+        <StyledNavItem>
+          <StyledLogo>
+            <LogoutIcon />
           </StyledLogo>
           <StyledText>登出</StyledText>
         </StyledNavItem>
-        </StyledNavList>
+      </StyledNavList>
     </StyledNavbar>
-  );
-};
+  )
+}
 
-export default Navbar;
-
-
+export default Navbar
