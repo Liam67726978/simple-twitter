@@ -28,6 +28,14 @@ const StyledContainer = styled(AuthContainer)`
 const StyledInputContainer = styled(AuthInputContainer)`
   margin: 40px 0;
   gap: 32px;
+
+  label,
+  input {
+    padding: 0 10.55px;
+  }
+  label {
+    padding-top: 6px;
+  }
 `
 
 // Link
