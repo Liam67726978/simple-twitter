@@ -8,16 +8,14 @@ const routes = [
   {
     path: `/login`,
     element: <LoginPage />,
-    children: [
-      {
-        path: 'register',
-        element: <RegistPage />,
-      },
-      {
-        path: 'admin',
-        element: <AdminLoginPage />,
-      },
-    ],
+  },
+  {
+    path: '/register',
+    element: <RegistPage />,
+  },
+  {
+    path: '/admin',
+    element: <AdminLoginPage />,
   },
   {
     path: `/simple-twitter`,
