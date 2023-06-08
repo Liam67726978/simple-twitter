@@ -102,7 +102,7 @@ export default function Login() {
   // Button事件
   async function handleClick() {
     // 判斷 account、password 是否符合格式
-    const regexAccount = /^(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{8,20}$/
+    const regexAccount = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,20}$/
     const regexPassword = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,12}$/
     // account 不符合
     if (!regexAccount.test(account)) {
@@ -116,7 +116,9 @@ export default function Login() {
     }
 
     try {
-      // setInputList('disabled')
+      // 提交時，禁用input
+      setInput(0, 'disabled', '')
+      setInput(1, 'disabled', '')
       // 保存返回的 success、authToken 資料
       const { success, token } = await login({ account, password })
       // 取得成功，將 authToken 存進用戶的 localStorage
@@ -126,6 +128,9 @@ export default function Login() {
     } catch (error) {
       console.log('錯誤拉')
     }
+    // 提交結束，啟用input
+    setInput(0, '')
+    setInput(1, '')
   }
 
   return (
