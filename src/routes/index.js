@@ -23,15 +23,11 @@ const routes = [
     element: <Navigate to={`/login`} />,
   },
   {
-    path: `/simple-twitter`,
-    element: <Navigate to={`/login`} />,
-  },
-  {
-    path: `login`,
+    path: `/login`,
     element: <LoginPage />,
   },
   {
-    path: 'register',
+    path: '/register',
     element: <RegistPage />,
   },
   {
@@ -39,7 +35,7 @@ const routes = [
     element: <AdminLoginPage />,
   },
   {
-    path: '/admin',
+    path: 'admin',
     element: <AdminPage />,
     children: [
       {
