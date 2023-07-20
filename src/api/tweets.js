@@ -1,51 +1,52 @@
-import axios from 'axios';
+import axios from 'axios'
 
-const baseUrl = 'https://young-lake-63146.herokuapp.com/api';
+const baseUrl =
+  'https://simple-twitter-ken-porject-11e706cdc2e3.herokuapp.com/api'
 
 const axiosInstance = axios.create({
   baseUrl: baseUrl,
-});
+})
 
 axiosInstance.interceptors.request.use(
   (config) => {
-    const token = localStorage.getItem('token');
+    const token = localStorage.getItem('token')
     if (token) {
-      config.headers['Authorization'] = `Bearer ${token}`;
+      config.headers['Authorization'] = `Bearer ${token}`
     }
-    return config;
+    return config
   },
   (error) => {
-    console.error(error);
-  },
-);
+    console.error(error)
+  }
+)
 
 export const getTweets = async () => {
   try {
-    const res = await axiosInstance.get(`${baseUrl}/tweets`);
-    return res.data;
+    const res = await axiosInstance.get(`${baseUrl}/tweets`)
+    return res.data
   } catch (error) {
-    console.error('[Get Tweets failed]: ', error);
+    console.error('[Get Tweets failed]: ', error)
   }
-};
+}
 
 export const getTweetById = async (id) => {
   try {
-    const res = await axiosInstance.get(`${baseUrl}/tweets/${id}`);
-    return res.data;
+    const res = await axiosInstance.get(`${baseUrl}/tweets/${id}`)
+    return res.data
   } catch (error) {
-    console.error('[Get The Tweet failed]: ', error);
+    console.error('[Get The Tweet failed]: ', error)
   }
-};
+}
 
 export const createTweet = async (payload) => {
-  const { description } = payload;
+  const { description } = payload
 
   try {
     const res = await axiosInstance.post(`${baseUrl}/tweets`, {
-      description
-    });
-    return res.data;
+      description,
+    })
+    return res.data
   } catch (error) {
-    console.error('[Create Tweet failed]: ', error);
+    console.error('[Create Tweet failed]: ', error)
   }
-};
+}

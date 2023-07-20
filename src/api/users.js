@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const usersURL = 'https://young-lake-63146.herokuapp.com/api/users'
+const usersURL =
+  'https://simple-twitter-ken-porject-11e706cdc2e3.herokuapp.com/api/users'
 
 // 登入頁面
 export async function login({ account, password }) {

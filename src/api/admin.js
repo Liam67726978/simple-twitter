@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const adminURL = 'https://young-lake-63146.herokuapp.com/api/admin'
+const adminURL =
+  'https://simple-twitter-ken-porject-11e706cdc2e3.herokuapp.com/api/admin'
 
 // 後台登入
 export async function adminLogin(account, password) {

@@ -1,6 +1,7 @@
 import axios from 'axios'
 
-const userURL = 'https://young-lake-63146.herokuapp.com/api/user'
+const userURL =
+  'https://simple-twitter-ken-porject-11e706cdc2e3.herokuapp.com/api/user'
 
 export async function checkPermission(token) {
   try {
